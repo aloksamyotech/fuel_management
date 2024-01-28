@@ -9,13 +9,14 @@ import bodyParser from 'body-parser';
 
 Dbconnection()
 
-const app = express()
-app.use(router);
+const app = express() // calling express js 
+app.use(express.json())
+app.use(router); // invoke router 
 
-app.use(cors());
-app.use(bodyParser.json());
+app.use(cors()); // bypass cors policy 
+app.use(bodyParser.json());  // parse the data into body 
 
 var port = process.env.PORT
-app.listen(() => {
+app.listen(port, () => {
     console.log("server is running at port " + port)
 })
