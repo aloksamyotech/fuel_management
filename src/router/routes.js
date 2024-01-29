@@ -1,5 +1,5 @@
 import express from 'express'
-import { addUser, login, twoFActorAuthentication } from '../controller/user.js';
+import { addUser, login } from '../controller/user.js';
 
 const router = express.Router()
 
@@ -8,7 +8,7 @@ const router = express.Router()
 
 router.post("/user/add", addUser)
 router.get("/user/login", login)
-router.get("/user/twofactorauth", twoFActorAuthentication)
+// router.get("/user/twofactorauth", twoFActorAuthentication)
 
 
 
