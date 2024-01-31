@@ -14,3 +14,8 @@ export const tableName = {
   SUPPLIER: "supply",
   ORDER: "order",
 };
+
+export const fule_type = {
+  bulk: "bulk",
+  retail: "retail",
+};

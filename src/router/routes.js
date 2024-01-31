@@ -3,7 +3,7 @@ import { addUser, login } from "../controller/user.js";
 import { fuelData } from "../controller/fuel.js";
 import { supplier_Code } from "../controller/supplier_status.js";
 import { supply, getAllDetails } from "../controller/supplier.js";
-
+import { ordered } from "../controller/order.js";
 const router = express.Router();
 
 // user routes
@@ -24,5 +24,9 @@ router.get("/supplier/status", supplier_Code);
 
 router.post("/supplier/details", supply);
 router.get("/supplier/getalldetails", getAllDetails);
+
+// Order routes
+
+router.post("/order/details", ordered);
 
 export default router;
