@@ -8,11 +8,11 @@ import bodyParser from "body-parser";
 Dbconnection();
 
 const app = express(); // calling express js
+app.use(cors()); // bypass cors policy
 app.use(express.json());
 app.use(router); // invoke router
 
-app.use(cors()); // bypass cors policy
-app.use(bodyParser.json()); // parse the data into body
+// app.use(bodyParser.json()); // parse the data into body
 
 var port = process.env.PORT;
 app.listen(port, () => {

@@ -1,4 +1,5 @@
 // import { massages } from "../helpers/constant.js";
+import { massages } from "../helpers/constant.js";
 import { OrderModel } from "../model/order.js";
 
 export const addOrder = async (req, res) => {
@@ -13,11 +14,9 @@ export const addOrder = async (req, res) => {
       fuel,
     });
 
-    const savedOrder = await newOrder.save();
-
-    res.json(savedOrder);
+    return await newOrder.save();
   } catch (error) {
     console.error(error);
-    res.status(500).json({ error: "Internal Server Error" });
+    return massages.internal_server_error;
   }
 };

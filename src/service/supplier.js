@@ -15,21 +15,18 @@ export const addSupplier = async (req, res) => {
       supplier_type,
     });
 
-    const savedSupplier = await newSupplier.save();
-
-    res.json(savedSupplier);
+    return await newSupplier.save();
   } catch (error) {
-    console.error(error),
-      res.status(500).json({ error: "Internal Server Error" });
+    console.error(error);
+    return massages.internal_server_error;
   }
 };
 
 export const getAllSupplierDetails = async (req, res) => {
   try {
-    const Data = await SupplierModel.find();
-    res.json(Data);
+    return await SupplierModel.find();
   } catch (error) {
     console.error(error);
-    res.send(massages.internal_server_error);
+    return massages.internal_server_error;
   }
 };
