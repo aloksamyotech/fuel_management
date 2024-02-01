@@ -13,6 +13,8 @@ export const tableName = {
   STATUS: "supplier",
   SUPPLIER: "supply",
   ORDER: "order",
+  STAFF: "staff",
+  PAYROLL: "payroll"
 };
 
 export const fule_type = {
