@@ -21,7 +21,7 @@ export const sendEmail =  (from, to, subject, text) => {
         html: text
     };
 
-   transporter.sendMail(mailOptions, function (error, info) {
+    transporter.sendMail(mailOptions, function (error, info) {
         if (error) {
             console.error('Error sending email:', error);
             return false
@@ -32,5 +32,8 @@ export const sendEmail =  (from, to, subject, text) => {
         }
     });
 
+}
 
+export const generateRandom = () => {
+    return Math.floor(Math.random() * 900000) + 100000;
 }
