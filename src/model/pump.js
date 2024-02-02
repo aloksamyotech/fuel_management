@@ -5,7 +5,7 @@ const ObjectId = mongoose.Schema.Types.ObjectId;
 const PumpSchema = mongoose.Schema({
   code: { type: String, required: true },
   desc: { type: String, required: true },
-  status: { type: String, required: false },
+  //   status: { type: String, required: true },
   fuel: { type: ObjectId, required: true },
   isActive: { type: Boolean, default: true },
   created_at: { type: Date, required: false, default: new Date().getTime() },

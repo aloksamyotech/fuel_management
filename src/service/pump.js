@@ -3,12 +3,12 @@ import { PumpModel } from "../model/pump.js";
 
 export const addPumpData = async (req, res) => {
   try {
-    const { code, desc, status, fuel } = req.body;
+    const { code, desc, fuel } = req.body;
 
     const newPump = new PumpModel({
       code,
       desc,
-      status,
+      //   status,
       fuel,
     });
 
