@@ -6,7 +6,6 @@ export const supply = async (req, res) => {
 };
 
 export const getAllDetails = async (req, res) => {
-  console.log("check =====>>>>");
   const data = await getAllSupplierDetails(req, res);
   res.send(data);
 };

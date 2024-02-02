@@ -1,10 +1,11 @@
 // import { massages } from "../helpers/constant.js";
-import { massages } from "../helpers/constant.js";
+import { fule_type, massages } from "../helpers/constant.js";
 import { OrderModel } from "../model/order.js";
 
 export const addOrder = async (req, res) => {
   try {
-    const { type, liters, cost, supplier, fuel } = req?.body;
+    let { type, liters, cost, supplier, fuel } = req?.body;
+    type = fule_type.bulk;
 
     const newOrder = new OrderModel({
       type,
@@ -15,6 +16,35 @@ export const addOrder = async (req, res) => {
     });
 
     return await newOrder.save();
+  } catch (error) {
+    console.error(error);
+    return massages.internal_server_error;
+  }
+};
+
+export const getAllOrder = async (req, res) => {
+  try {
+    return await OrderModel.aggregate([
+      {
+        $lookup: {
+          from: "supplies",
+          localField: "supplier",
+          foreignField: "_id",
+          as: "supplier",
+        },
+      },
+      { $unwind: "$supplier" },
+      {
+        $lookup: {
+          from: "fuels",
+          localField: "fuel",
+          foreignField: "_id",
+          as: "fuel",
+        },
+      },
+      { $unwind: "$fuel" },
+      { $sort: { _id: -1 } },
+    ]);
   } catch (error) {
     console.error(error);
     return massages.internal_server_error;

@@ -14,7 +14,8 @@ export const tableName = {
   SUPPLIER: "supply",
   ORDER: "order",
   STAFF: "staff",
-  PAYROLL: "payroll"
+  PAYROLL: "payroll",
+  PUMP: "pump",
 };
 
 export const fule_type = {
