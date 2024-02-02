@@ -1,5 +1,5 @@
 import mongoose from "mongoose";
-import { fule_type, tableName } from "../helpers/constant.js";
+import { tableName } from "../helpers/constant.js";
 const ObjectId = mongoose.Schema.Types.ObjectId;
 
 const OrderSchema = mongoose.Schema({

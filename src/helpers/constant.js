@@ -16,6 +16,9 @@ export const tableName = {
   STAFF: "staff",
   PAYROLL: "payroll",
   PUMP: "pump",
+  DUTY: "duty",
+  SAVING: "saving",
+  SALES: "sales",
 };
 
 export const fule_type = {

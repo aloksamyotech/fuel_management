@@ -7,6 +7,9 @@ import { addStaff, fetchAllStaff } from "../controller/staff.js";
 import { addPayRoll, fetchAllPayRoll } from "../controller/payroll.js";
 import { ordered, getOrder } from "../controller/order.js";
 import { addPump, fetchPump } from "../controller/pump.js";
+import { addDuty, fetchAllDuty } from "../controller/assignDuty.js";
+import { addSaving, fetchAllSaving } from "../controller/saving.js";
+import { fetchAllSales, addSales } from "../controller/sales.js";
 const router = express.Router();
 
 // user routes
@@ -19,11 +22,11 @@ router.get("/user/login", login);
 
 router.get("/fuel/details", fuelData);
 
-// Supplier_Status
+// Supplier_Status routes
 
 router.get("/supplier/status", supplier_Code);
 
-// Supplier
+// Supplier routes
 
 router.post("/supplier/details", supply);
 router.get("/supplier/getalldetails", getAllDetails);
@@ -33,20 +36,34 @@ router.get("/supplier/getalldetails", getAllDetails);
 router.post("/order/details", ordered);
 router.get("/order/getAllDetails", getOrder);
 
+// Pump rotes
+router.post("/add/pump", addPump);
+router.get("/pump/getalldetails", fetchPump);
+
+//Assign Duty routes
+
+router.post("/add/duty", addDuty);
+router.get("/duty/get/all", fetchAllDuty);
+
+// Saving  routes
+
+router.post("/add/saving", addSaving);
+router.get("/saving/get/all", fetchAllSaving);
+
+// Sales routes
+router.post("/add/sales", addSales);
+router.get("/sales/get/all", fetchAllSales);
+
 // here are hrms routes
 
-//staff
+//staff routes
 
 router.post("/staff/add", addStaff);
 router.get("/staff/get/all", fetchAllStaff);
 
-// payroll
+// payroll routes
 
 router.post("/payroll/add", addPayRoll);
 router.get("/payroll/get/all", fetchAllPayRoll);
-
-// Pump rotes
-router.post("/add/pump", addPump);
-router.get("/pump/getalldetails", fetchPump);
 
 export default router;
