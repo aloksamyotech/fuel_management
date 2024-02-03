@@ -59,25 +59,20 @@ export const addOrderDocs = {
                 items: {
                   type: "object",
                   properties: {
-                    // Define properties of the order object
-                    // For example:
                     orderId: { type: "string" },
                     type: { type: "string" },
                     liters: { type: "number" },
                     cost: { type: "number" },
-                    // Add more properties as needed
                   },
                 },
               },
               example: [
-                // Provide examples of order objects
                 {
                   orderId: "123456",
                   type: "Regular",
                   liters: 50,
                   cost: 100,
                 },
-                // Add more example objects if needed
               ],
             },
           },
