@@ -2,15 +2,14 @@ import mongoose from "mongoose";
 import { tableName } from "../helpers/constant.js";
 const ObjectId = mongoose.Schema.Types.ObjectId;
 
-const OrderSchema = mongoose.Schema({
-  type: { type: String, required: false },
-  liters: { type: Number, required: true },
-  cost: { type: Number, required: true },
-  supplier: { type: ObjectId, required: true },
+const PumpSchema = mongoose.Schema({
+  code: { type: String, required: true },
+  desc: { type: String, required: true },
+  //   status: { type: String, required: true },
   fuel: { type: ObjectId, required: true },
   isActive: { type: Boolean, default: true },
   created_at: { type: Date, required: false, default: new Date().getTime() },
   updated_at: { type: Date, required: false, default: new Date().getTime() },
 });
 
-export const OrderModel = mongoose.model(tableName.ORDER, OrderSchema);
+export const PumpModel = mongoose.model(tableName.PUMP, PumpSchema);
