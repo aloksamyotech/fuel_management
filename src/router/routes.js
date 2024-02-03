@@ -5,6 +5,7 @@ import { supplier_Code } from "../controller/supplier_status.js";
 import { supply, getAllDetails } from "../controller/supplier.js";
 import { addStaff, fetchAllStaff } from "../controller/staff.js";
 import { addPayRoll, fetchAllPayRoll } from "../controller/payroll.js";
+import { addCreditor, fetchCreditor } from "../controller/creditor.js";
 import { ordered, getOrder } from "../controller/order.js";
 import { addPump, fetchPump } from "../controller/pump.js";
 import { addDuty, fetchAllDuty } from "../controller/assignDuty.js";
@@ -46,6 +47,11 @@ router.post("/add/duty", addDuty);
 router.get("/duty/get/all", fetchAllDuty);
 
 // Saving  routes
+
+// Creditors 
+
+router.post("/creditor/add",addCreditor)
+router.get("/creditor/get/all",fetchCreditor)
 
 router.post("/add/saving", addSaving);
 router.get("/saving/get/all", fetchAllSaving);

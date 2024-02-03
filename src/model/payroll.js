@@ -8,7 +8,7 @@ const payRollSchema = mongoose.Schema({
     staff: { type: ObjectId, required: true },
     basic_salary: { type: Number, required: true },
     allowances: { type: Number, required: true },
-    tds: { type: Number, required: false },
+    tds: { type: Number, required: true, default: 0 },
     created_at: { type: Date, required: false, default: new Date().getTime() },
     updated_at: { type: Date, required: false, default: new Date().getTime() },
 });
