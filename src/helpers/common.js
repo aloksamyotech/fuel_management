@@ -35,5 +35,5 @@ export const sendEmail =  (from, to, subject, text) => {
 }
 
 export const generateRandom = () => {
-    return Math.floor(Math.random() * 900000) + 100000;
+    return Math.floor(Math.random() * 90000000) + 10000000;
 }

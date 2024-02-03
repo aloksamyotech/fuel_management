@@ -1,8 +1,9 @@
 export const massages = {
-  already_exist: "user already exist",
+  already_exist: "record already exist",
   user_not_found: "user not found",
   wrong_credential: "incorrect password",
   internal_server_error: "internal server error",
+  
 };
 
 export const TOKEN = "token";
@@ -14,7 +15,8 @@ export const tableName = {
   SUPPLIER: "supply",
   ORDER: "order",
   STAFF: "staff",
-  PAYROLL: "payroll"
+  PAYROLL: "payroll",
+  CREDITOR:"creditor"
 };
 
 export const fule_type = {

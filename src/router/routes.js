@@ -6,6 +6,7 @@ import { supply, getAllDetails } from "../controller/supplier.js";
 import { ordered } from "../controller/order.js";
 import { addStaff, fetchAllStaff } from "../controller/staff.js";
 import { addPayRoll, fetchAllPayRoll } from "../controller/payroll.js";
+import { addCreditor, fetchCreditor } from "../controller/creditor.js";
 const router = express.Router();
 
 // user routes
@@ -44,6 +45,11 @@ router.get("/staff/get/all",fetchAllStaff)
 
 router.post("/payroll/add",addPayRoll)
 router.get("/payroll/get/all",fetchAllPayRoll)
+
+// Creditors 
+
+router.post("/creditor/add",addCreditor)
+router.get("/creditor/get/all",fetchCreditor)
 
 
 
