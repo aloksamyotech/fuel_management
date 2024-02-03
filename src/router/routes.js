@@ -1,5 +1,5 @@
 import express from "express";
-import { addUser, login } from "../controller/user.js";
+import { addUser, login, update } from "../controller/user.js";
 import { fuelData } from "../controller/fuel.js";
 import { supplier_Code } from "../controller/supplier_status.js";
 import { supply, getAllDetails } from "../controller/supplier.js";
@@ -17,6 +17,8 @@ const router = express.Router();
 
 router.post("/user/add", addUser);
 router.get("/user/login", login);
+router.patch("/user/login", update);
+
 // router.get("/user/twofactorauth", twoFActorAuthentication);
 
 //Fuel routes
@@ -42,7 +44,6 @@ router.post("/add/pump", addPump);
 router.get("/pump/getalldetails", fetchPump);
 
 //Assign Duty routes
-
 router.post("/add/duty", addDuty);
 router.get("/duty/get/all", fetchAllDuty);
 

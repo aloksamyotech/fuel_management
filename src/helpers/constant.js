@@ -3,7 +3,7 @@ export const massages = {
   user_not_found: "user not found",
   wrong_credential: "incorrect password",
   internal_server_error: "internal server error",
-  
+
 };
 
 export const TOKEN = "token";
@@ -16,7 +16,7 @@ export const tableName = {
   ORDER: "order",
   STAFF: "staff",
   PAYROLL: "payroll",
-  CREDITOR:"creditor"
+  CREDITOR: "creditor",
   PUMP: "pump",
   DUTY: "duty",
   SAVING: "saving",

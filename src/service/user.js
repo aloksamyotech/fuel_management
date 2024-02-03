@@ -116,3 +116,26 @@ export const userLogin = async (loginData) => {
 
 
 // }
+
+
+export const updateUser = async (userDetails) => {
+    const userData = {
+        firstname: userDetails.firstname,
+        lastname: userDetails.lastname,
+        email: userDetails.email,
+        phone: userDetails.phone,
+        password: userDetails.password,
+    }
+
+    const passwordHash = await convertHash(userData?.password)
+    userData.password = passwordHash
+
+    const isAlreadyExist = await isUserAlreadyExist(userData.email)
+
+    if (isAlreadyExist) {
+        return massages.already_exist
+    }
+
+    const userDataToSave = new UserModel(userData)
+    return await userDataToSave.save()
+}
