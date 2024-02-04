@@ -69,21 +69,6 @@ export const generateSwaggerDocs = () => {
             "/payroll/add": addPayrollDocs,
             "/payroll/get/all": getAllPayrollDocs,
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         }
     };
 };

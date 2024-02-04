@@ -1,8 +1,11 @@
+import { loggers } from "winston"
 import { createOtp, sendEmail } from "../helpers/common.js"
 import { TOKEN, massages } from "../helpers/constant.js"
 import { compareHash, convertHash } from "../helpers/hash.js"
 import { createToken } from "../middleware/jwt_token.js"
 import { UserModel } from "../model/user.js"
+import { logger } from "../../app.js"
+import { logError } from "../middleware/logger.js"
 
 export const isUserAlreadyExist = async (email) => {
     const user = await UserModel.findOne({ email: email }, { _id: 1 }).lean()
@@ -10,25 +13,33 @@ export const isUserAlreadyExist = async (email) => {
 }
 
 export const saveUser = async (userDetails) => {
-    const userData = {
-        firstname: userDetails.firstname,
-        lastname: userDetails.lastname,
-        email: userDetails.email,
-        phone: userDetails.phone,
-        password: userDetails.password,
+    try {
+        const userData = {
+            firstname: userDetails.firstname,
+            lastname: userDetails.lastname,
+            email: userDetails.email,
+            phone: userDetails.phone,
+            password: userDetails.password,
+        }
+
+
+
+        const passwordHash = await convertHash(userData?.password)
+        userData.password = passwordHash
+
+        const isAlreadyExist = await isUserAlreadyExist(userData.email)
+
+        if (isAlreadyExist) {
+            return massages.already_exist
+        }
+
+        const userDataToSave = new UserModel(userData)
+        return await userDataToSave.save()
+    } catch (error) {
+        logError()
+        return massages.internal_server_error
     }
 
-    const passwordHash = await convertHash(userData?.password)
-    userData.password = passwordHash
-
-    const isAlreadyExist = await isUserAlreadyExist(userData.email)
-
-    if (isAlreadyExist) {
-        return massages.already_exist
-    }
-
-    const userDataToSave = new UserModel(userData)
-    return await userDataToSave.save()
 }
 
 export const userLogin = async (loginData) => {
@@ -89,6 +100,7 @@ export const userLogin = async (loginData) => {
 
     } catch (error) {
         console.log(error)
+        logError()
         return massages.internal_server_error
     }
 }
@@ -119,23 +131,10 @@ export const userLogin = async (loginData) => {
 
 
 export const updateUser = async (userDetails) => {
-    const userData = {
-        firstname: userDetails.firstname,
-        lastname: userDetails.lastname,
-        email: userDetails.email,
-        phone: userDetails.phone,
-        password: userDetails.password,
+
+    const where = {
+        _id: userDetails.id
     }
-
-    const passwordHash = await convertHash(userData?.password)
-    userData.password = passwordHash
-
-    const isAlreadyExist = await isUserAlreadyExist(userData.email)
-
-    if (isAlreadyExist) {
-        return massages.already_exist
-    }
-
-    const userDataToSave = new UserModel(userData)
-    return await userDataToSave.save()
+    let { _id, ...data } = userDetails
+    return UserModel.patch({ $set: { where }, data })
 }

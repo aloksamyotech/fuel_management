@@ -16,7 +16,7 @@ const router = express.Router();
 // user routes
 
 router.post("/user/add", addUser);
-router.get("/user/login", login);
+router.post("/user/login", login);
 router.patch("/user/login", update);
 
 // router.get("/user/twofactorauth", twoFActorAuthentication);
