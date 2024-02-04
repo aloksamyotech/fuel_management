@@ -1,9 +1,14 @@
 // swaggerDocs.js
 
 import { addDutyDocs, fetchAllDutyDocs } from "./assign_duty.js";
+import { addCreditorDocs, fetchCreditorDocs } from "./creditor.js";
 import { fuelTypeDocs } from "./fuel.js";
 import { addOrderDocs, getAllOrdersDocs } from "./order.js";
+import { addPayrollDocs, getAllPayrollDocs } from "./payroll.js";
 import { addPumpDocs, getPumpDetailsDocs } from "./pump.js";
+import { addSalesDocs, fetchAllSalesDocs } from "./sales.js";
+import { addSavingDocs, fetchAllSavingDocs } from "./saving.js";
+import { addStaffDocs, getAllStaffDocs } from "./staff.js";
 import { addSupplierDocs, fetchAllSupplierDocs, supplierStatusDocs } from "./supplier.js";
 import { addUserDoc, loginDocs, updateUserDocs } from "./user.js";
 
@@ -41,6 +46,37 @@ export const generateSwaggerDocs = () => {
             //assign duty 
             "/add/duty": addDutyDocs,
             "/duty/get/all": fetchAllDutyDocs,
+
+
+            // creditors 
+            "/creditor/add": addCreditorDocs,
+            "/creditor/get/all": fetchCreditorDocs,
+
+            // saving 
+            "/add/saving": addSavingDocs,
+            "/saving/get/all": fetchAllSavingDocs,
+
+
+            //sales 
+            "/add/sales": addSalesDocs,
+            "/sales/get/all": fetchAllSalesDocs,
+
+            //staff 
+            "/staff/add": addStaffDocs,
+            "/staff/get/all": getAllStaffDocs,
+
+            //payroll
+            "/payroll/add": addPayrollDocs,
+            "/payroll/get/all": getAllPayrollDocs,
+
+
+
+
+
+
+
+
+
 
 
 

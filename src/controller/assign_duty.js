@@ -1,4 +1,4 @@
-import { createDuty, getAllDuty } from "../service/assignDuty.js";
+import { createDuty, getAllDuty } from "../service/assign_duty.js";
 
 export const addDuty = async (req, res) => {
   const data = await createDuty(req, res);

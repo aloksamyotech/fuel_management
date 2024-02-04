@@ -8,7 +8,7 @@ import { addPayRoll, fetchAllPayRoll } from "../controller/payroll.js";
 import { addCreditor, fetchCreditor } from "../controller/creditor.js";
 import { ordered, getOrder } from "../controller/order.js";
 import { addPump, fetchPump } from "../controller/pump.js";
-import { addDuty, fetchAllDuty } from "../controller/assignDuty.js";
+import { addDuty, fetchAllDuty } from "../controller/assign_duty.js";
 import { addSaving, fetchAllSaving } from "../controller/saving.js";
 import { fetchAllSales, addSales } from "../controller/sales.js";
 const router = express.Router();
@@ -54,6 +54,8 @@ router.get("/duty/get/all", fetchAllDuty);
 router.post("/creditor/add",addCreditor)
 router.get("/creditor/get/all",fetchCreditor)
 
+
+// Saving 
 router.post("/add/saving", addSaving);
 router.get("/saving/get/all", fetchAllSaving);
 

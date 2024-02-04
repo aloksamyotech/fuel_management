@@ -1,5 +1,5 @@
 import { massages } from "../helpers/constant.js";
-import { DutyModel } from "../model/assignDuty.js";
+import { DutyModel } from "../model/assign_duty.js";
 
 export const createDuty = async (req, res) => {
   try {
