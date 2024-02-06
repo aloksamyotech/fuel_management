@@ -1,5 +1,5 @@
 import { massages } from "../helpers/constant.js";
-import { SalesModel } from "../model/sales.js";
+import { SalesModel } from "../model/Sales.js";
 
 export const createSalesData = async (req, res) => {
   try {

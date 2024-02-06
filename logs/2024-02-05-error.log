@@ -1,0 +1,24 @@
+2024-2-5 12:3:27:    uncaughtException: logger is not defined
+ReferenceError: logger is not defined
+    at logError (file:///C:/Users/HP/OneDrive/Desktop/fuel_management/src/middleware/logger.js:2:5)
+    at saveUser (file:///C:/Users/HP/OneDrive/Desktop/fuel_management/src/service/user.js:39:9)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async addUser (file:///C:/Users/HP/OneDrive/Desktop/fuel_management/src/controller/user.js:4:18)
+2024-2-5 12:4:54:    uncaughtException: Cannot read properties of undefined (reading 'message')
+TypeError: Cannot read properties of undefined (reading 'message')
+    at logError (file:///C:/Users/HP/OneDrive/Desktop/fuel_management/src/middleware/logger.js:4:25)
+    at saveUser (file:///C:/Users/HP/OneDrive/Desktop/fuel_management/src/service/user.js:39:9)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async addUser (file:///C:/Users/HP/OneDrive/Desktop/fuel_management/src/controller/user.js:4:18)
+2024-2-5 15:42:17:    uncaughtException: staff validation failed: designation: Path `designation` is required., phone: Path `phone` is required., email: Path `email` is required., address: Path `address` is required., qualification: Path `qualification` is required., full_name: Path `full_name` is required.
+ValidationError: staff validation failed: designation: Path `designation` is required., phone: Path `phone` is required., email: Path `email` is required., address: Path `address` is required., qualification: Path `qualification` is required., full_name: Path `full_name` is required.
+    at Document.invalidate (C:\Users\HP\OneDrive\Desktop\fuel_management\node_modules\mongoose\lib\document.js:3201:32)
+    at C:\Users\HP\OneDrive\Desktop\fuel_management\node_modules\mongoose\lib\document.js:2994:17
+    at C:\Users\HP\OneDrive\Desktop\fuel_management\node_modules\mongoose\lib\schemaType.js:1370:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:77:11)
+2024-2-5 15:44:55:    uncaughtException: staff validation failed: designation: Path `designation` is required., phone: Path `phone` is required., email: Path `email` is required., address: Path `address` is required., qualification: Path `qualification` is required., full_name: Path `full_name` is required.
+ValidationError: staff validation failed: designation: Path `designation` is required., phone: Path `phone` is required., email: Path `email` is required., address: Path `address` is required., qualification: Path `qualification` is required., full_name: Path `full_name` is required.
+    at Document.invalidate (C:\Users\HP\OneDrive\Desktop\fuel_management\node_modules\mongoose\lib\document.js:3201:32)
+    at C:\Users\HP\OneDrive\Desktop\fuel_management\node_modules\mongoose\lib\document.js:2994:17
+    at C:\Users\HP\OneDrive\Desktop\fuel_management\node_modules\mongoose\lib\schemaType.js:1370:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:77:11)
