@@ -49,13 +49,12 @@ router.get("/duty/get/all", fetchAllDuty);
 
 // Saving  routes
 
-// Creditors 
+// Creditors
 
-router.post("/creditor/add",addCreditor)
-router.get("/creditor/get/all",fetchCreditor)
+router.post("/creditor/add", addCreditor);
+router.get("/creditor/get/all", fetchCreditor);
 
-
-// Saving 
+// Saving
 router.post("/add/saving", addSaving);
 router.get("/saving/get/all", fetchAllSaving);
 

@@ -24,7 +24,7 @@ export const addSupplier = async (req, res) => {
 
 export const getAllSupplierDetails = async (req, res) => {
   try {
-    return await SupplierModel.find();
+    return await SupplierModel.find().sort({ created_at: -1 });
   } catch (error) {
     console.error(error);
     return massages.internal_server_error;

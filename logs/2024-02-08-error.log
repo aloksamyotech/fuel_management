@@ -1,0 +1,48 @@
+2024-2-8 13:4:38:    uncaughtException: creditor validation failed: email: Path `email` is required., phone: Path `phone` is required., office_address: Path `office_address` is required.
+ValidationError: creditor validation failed: email: Path `email` is required., phone: Path `phone` is required., office_address: Path `office_address` is required.
+    at Document.invalidate (C:\Users\HP\OneDrive\Desktop\fuel_management\node_modules\mongoose\lib\document.js:3201:32)
+    at C:\Users\HP\OneDrive\Desktop\fuel_management\node_modules\mongoose\lib\document.js:2994:17
+    at C:\Users\HP\OneDrive\Desktop\fuel_management\node_modules\mongoose\lib\schemaType.js:1370:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:77:11)
+2024-2-8 13:4:38:    uncaughtException: creditor validation failed: email: Path `email` is required., phone: Path `phone` is required., office_address: Path `office_address` is required.
+ValidationError: creditor validation failed: email: Path `email` is required., phone: Path `phone` is required., office_address: Path `office_address` is required.
+    at Document.invalidate (C:\Users\HP\OneDrive\Desktop\fuel_management\node_modules\mongoose\lib\document.js:3201:32)
+    at C:\Users\HP\OneDrive\Desktop\fuel_management\node_modules\mongoose\lib\document.js:2994:17
+    at C:\Users\HP\OneDrive\Desktop\fuel_management\node_modules\mongoose\lib\schemaType.js:1370:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:77:11)
+2024-2-8 13:4:39:    uncaughtException: creditor validation failed: email: Path `email` is required., phone: Path `phone` is required., office_address: Path `office_address` is required.
+ValidationError: creditor validation failed: email: Path `email` is required., phone: Path `phone` is required., office_address: Path `office_address` is required.
+    at Document.invalidate (C:\Users\HP\OneDrive\Desktop\fuel_management\node_modules\mongoose\lib\document.js:3201:32)
+    at C:\Users\HP\OneDrive\Desktop\fuel_management\node_modules\mongoose\lib\document.js:2994:17
+    at C:\Users\HP\OneDrive\Desktop\fuel_management\node_modules\mongoose\lib\schemaType.js:1370:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:77:11)
+2024-2-8 13:4:39:    uncaughtException: creditor validation failed: email: Path `email` is required., phone: Path `phone` is required., office_address: Path `office_address` is required.
+ValidationError: creditor validation failed: email: Path `email` is required., phone: Path `phone` is required., office_address: Path `office_address` is required.
+    at Document.invalidate (C:\Users\HP\OneDrive\Desktop\fuel_management\node_modules\mongoose\lib\document.js:3201:32)
+    at C:\Users\HP\OneDrive\Desktop\fuel_management\node_modules\mongoose\lib\document.js:2994:17
+    at C:\Users\HP\OneDrive\Desktop\fuel_management\node_modules\mongoose\lib\schemaType.js:1370:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:77:11)
+2024-2-8 13:4:39:    uncaughtException: creditor validation failed: email: Path `email` is required., phone: Path `phone` is required., office_address: Path `office_address` is required.
+ValidationError: creditor validation failed: email: Path `email` is required., phone: Path `phone` is required., office_address: Path `office_address` is required.
+    at Document.invalidate (C:\Users\HP\OneDrive\Desktop\fuel_management\node_modules\mongoose\lib\document.js:3201:32)
+    at C:\Users\HP\OneDrive\Desktop\fuel_management\node_modules\mongoose\lib\document.js:2994:17
+    at C:\Users\HP\OneDrive\Desktop\fuel_management\node_modules\mongoose\lib\schemaType.js:1370:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:77:11)
+2024-2-8 13:4:39:    uncaughtException: creditor validation failed: email: Path `email` is required., phone: Path `phone` is required., office_address: Path `office_address` is required.
+ValidationError: creditor validation failed: email: Path `email` is required., phone: Path `phone` is required., office_address: Path `office_address` is required.
+    at Document.invalidate (C:\Users\HP\OneDrive\Desktop\fuel_management\node_modules\mongoose\lib\document.js:3201:32)
+    at C:\Users\HP\OneDrive\Desktop\fuel_management\node_modules\mongoose\lib\document.js:2994:17
+    at C:\Users\HP\OneDrive\Desktop\fuel_management\node_modules\mongoose\lib\schemaType.js:1370:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:77:11)
+2024-2-8 13:9:9:    uncaughtException: creditor validation failed: email: Path `email` is required., phone: Path `phone` is required., office_address: Path `office_address` is required.
+ValidationError: creditor validation failed: email: Path `email` is required., phone: Path `phone` is required., office_address: Path `office_address` is required.
+    at Document.invalidate (C:\Users\HP\OneDrive\Desktop\fuel_management\node_modules\mongoose\lib\document.js:3201:32)
+    at C:\Users\HP\OneDrive\Desktop\fuel_management\node_modules\mongoose\lib\document.js:2994:17
+    at C:\Users\HP\OneDrive\Desktop\fuel_management\node_modules\mongoose\lib\schemaType.js:1370:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:77:11)
+2024-2-8 13:19:7:    uncaughtException: creditor validation failed: office_address: Path `office_address` is required.
+ValidationError: creditor validation failed: office_address: Path `office_address` is required.
+    at Document.invalidate (C:\Users\HP\OneDrive\Desktop\fuel_management\node_modules\mongoose\lib\document.js:3201:32)
+    at C:\Users\HP\OneDrive\Desktop\fuel_management\node_modules\mongoose\lib\document.js:2994:17
+    at C:\Users\HP\OneDrive\Desktop\fuel_management\node_modules\mongoose\lib\schemaType.js:1370:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:77:11)

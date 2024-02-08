@@ -30,5 +30,5 @@ export const saveStaff = async (req, res) => {
 };
 
 export const allStaff = async (req, res) => {
-  return await StaffModel.find();
+  return await StaffModel.find().sort({ created_at: -1 });
 };
