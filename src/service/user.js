@@ -18,7 +18,7 @@ export const saveUser = async (userDetails) => {
       firstname: userDetails.firstname,
       lastname: userDetails.lastname,
       email: userDetails.email,
-      phone: userDetails.phone,
+      //   phone: userDetails.phone,
       password: userDetails.password,
     };
 
@@ -34,7 +34,8 @@ export const saveUser = async (userDetails) => {
     const userDataToSave = new UserModel(userData);
     return await userDataToSave.save();
   } catch (error) {
-    // logger.error(`${error.message}\n${error.stack}`);
+    console.log(error);
+    logger.error(`${error.message}\n${error.stack}`);
     return massages.internal_server_error;
   }
 };
@@ -123,7 +124,7 @@ export const userLogin = async (loginData) => {
 
 // }
 
-export const updateUser = async (userDetails) => {
+export const userUpdate = async (userDetails) => {
   const where = {
     _id: userDetails.id,
   };

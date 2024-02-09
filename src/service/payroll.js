@@ -14,5 +14,21 @@ export const savePayRoll = async (req, res) => {
 };
 
 export const allPayRoll = async (req, res) => {
-  return await PayRollModel.find().sort({ created_at: -1 });
+  try {
+    return await PayRollModel.aggregate([
+      {
+        $lookup: {
+          from: "staffs",
+          localField: "staff",
+          foreignField: "_id",
+          as: "staff",
+        },
+      },
+      { $unwind: "$staff" },
+      { $sort: { _id: -1 } },
+    ]);
+  } catch (error) {
+    console.error(error);
+    return massages.internal_server_error;
+  }
 };
