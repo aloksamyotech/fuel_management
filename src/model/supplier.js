@@ -1,6 +1,5 @@
 import mongoose from "mongoose";
 import { tableName } from "../helpers/constant.js";
-const ObjectId = mongoose.Schema.Types.ObjectId;
 
 const supplierSchema = mongoose.Schema({
   name: { type: String, required: true },
@@ -8,8 +7,10 @@ const supplierSchema = mongoose.Schema({
   phone: { type: Number, required: true },
   email: { type: String, required: true },
   address: { type: String, required: true },
-  supplier_type: { type: ObjectId, required: true },
+  supplier_type: { type: String, required: true },
   isActive: { type: Boolean, default: true },
+  created_at: { type: Date, required: false, default: new Date().getTime() },
+  updated_at: { type: Date, required: false, default: new Date().getTime() },
 });
 
 export const SupplierModel = mongoose.model(tableName.SUPPLIER, supplierSchema);

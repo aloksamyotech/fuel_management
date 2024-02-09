@@ -1,3 +1,4 @@
+import { logger } from "../../app.js";
 import { massages } from "../helpers/constant.js";
 import { SavingModel } from "../model/saving.js";
 
@@ -15,13 +16,14 @@ export const createSavingData = async (req, res) => {
     return await newSaving.save();
   } catch (error) {
     console.error(error);
+    logger.error(`${error.message}\n${error.stack}`);
     return massages.internal_server_error;
   }
 };
 
 export const getAllSavingData = async (req, res) => {
   try {
-    return await SavingModel.find();
+    return await SavingModel.find().sort({ created_at: -1 });
   } catch (error) {
     console.error(error);
     return massages.internal_server_error;

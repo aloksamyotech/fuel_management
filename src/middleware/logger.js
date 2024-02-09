@@ -1,4 +1,3 @@
-export const logError = (error) => {
-    logger.error(`${error.message}\n${error.stack}`);
+import { logger } from "../../app.js";
 
-}
+export const logError = (error) => {};
