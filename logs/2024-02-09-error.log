@@ -1,0 +1,60 @@
+2024-2-9 13:9:56:    uncaughtException: payroll validation failed: basic_salary: Path `basic_salary` is required.
+ValidationError: payroll validation failed: basic_salary: Path `basic_salary` is required.
+    at Document.invalidate (C:\Users\HP\OneDrive\Desktop\fuel_management\node_modules\mongoose\lib\document.js:3201:32)
+    at C:\Users\HP\OneDrive\Desktop\fuel_management\node_modules\mongoose\lib\document.js:2994:17
+    at C:\Users\HP\OneDrive\Desktop\fuel_management\node_modules\mongoose\lib\schemaType.js:1370:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:77:11)
+2024-2-9 13:9:57:    uncaughtException: payroll validation failed: basic_salary: Path `basic_salary` is required.
+ValidationError: payroll validation failed: basic_salary: Path `basic_salary` is required.
+    at Document.invalidate (C:\Users\HP\OneDrive\Desktop\fuel_management\node_modules\mongoose\lib\document.js:3201:32)
+    at C:\Users\HP\OneDrive\Desktop\fuel_management\node_modules\mongoose\lib\document.js:2994:17
+    at C:\Users\HP\OneDrive\Desktop\fuel_management\node_modules\mongoose\lib\schemaType.js:1370:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:77:11)
+2024-2-9 13:9:57:    uncaughtException: payroll validation failed: basic_salary: Path `basic_salary` is required.
+ValidationError: payroll validation failed: basic_salary: Path `basic_salary` is required.
+    at Document.invalidate (C:\Users\HP\OneDrive\Desktop\fuel_management\node_modules\mongoose\lib\document.js:3201:32)
+    at C:\Users\HP\OneDrive\Desktop\fuel_management\node_modules\mongoose\lib\document.js:2994:17
+    at C:\Users\HP\OneDrive\Desktop\fuel_management\node_modules\mongoose\lib\schemaType.js:1370:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:77:11)
+2024-2-9 13:9:57:    uncaughtException: payroll validation failed: basic_salary: Path `basic_salary` is required.
+ValidationError: payroll validation failed: basic_salary: Path `basic_salary` is required.
+    at Document.invalidate (C:\Users\HP\OneDrive\Desktop\fuel_management\node_modules\mongoose\lib\document.js:3201:32)
+    at C:\Users\HP\OneDrive\Desktop\fuel_management\node_modules\mongoose\lib\document.js:2994:17
+    at C:\Users\HP\OneDrive\Desktop\fuel_management\node_modules\mongoose\lib\schemaType.js:1370:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:77:11)
+2024-2-9 16:28:51:    User validation failed: firstname: Path `firstname` is required., lastname: Path `lastname` is required.
+ValidationError: User validation failed: firstname: Path `firstname` is required., lastname: Path `lastname` is required.
+    at Document.invalidate (C:\Users\HP\OneDrive\Desktop\fuel_management\node_modules\mongoose\lib\document.js:3201:32)
+    at C:\Users\HP\OneDrive\Desktop\fuel_management\node_modules\mongoose\lib\document.js:2994:17
+    at C:\Users\HP\OneDrive\Desktop\fuel_management\node_modules\mongoose\lib\schemaType.js:1370:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:77:11)
+2024-2-9 16:34:44:    User validation failed: firstname: Path `firstname` is required., lastname: Path `lastname` is required.
+ValidationError: User validation failed: firstname: Path `firstname` is required., lastname: Path `lastname` is required.
+    at Document.invalidate (C:\Users\HP\OneDrive\Desktop\fuel_management\node_modules\mongoose\lib\document.js:3201:32)
+    at C:\Users\HP\OneDrive\Desktop\fuel_management\node_modules\mongoose\lib\document.js:2994:17
+    at C:\Users\HP\OneDrive\Desktop\fuel_management\node_modules\mongoose\lib\schemaType.js:1370:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:77:11)
+2024-2-9 16:42:49:    User validation failed: firstname: Path `firstname` is required., lastname: Path `lastname` is required.
+ValidationError: User validation failed: firstname: Path `firstname` is required., lastname: Path `lastname` is required.
+    at Document.invalidate (C:\Users\HP\OneDrive\Desktop\fuel_management\node_modules\mongoose\lib\document.js:3201:32)
+    at C:\Users\HP\OneDrive\Desktop\fuel_management\node_modules\mongoose\lib\document.js:2994:17
+    at C:\Users\HP\OneDrive\Desktop\fuel_management\node_modules\mongoose\lib\schemaType.js:1370:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:77:11)
+2024-2-9 16:47:28:    User validation failed: firstname: Path `firstname` is required., lastname: Path `lastname` is required.
+ValidationError: User validation failed: firstname: Path `firstname` is required., lastname: Path `lastname` is required.
+    at Document.invalidate (C:\Users\HP\OneDrive\Desktop\fuel_management\node_modules\mongoose\lib\document.js:3201:32)
+    at C:\Users\HP\OneDrive\Desktop\fuel_management\node_modules\mongoose\lib\document.js:2994:17
+    at C:\Users\HP\OneDrive\Desktop\fuel_management\node_modules\mongoose\lib\schemaType.js:1370:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:77:11)
+2024-2-9 16:50:38:    User validation failed: firstname: Path `firstname` is required., lastname: Path `lastname` is required.
+ValidationError: User validation failed: firstname: Path `firstname` is required., lastname: Path `lastname` is required.
+    at Document.invalidate (C:\Users\HP\OneDrive\Desktop\fuel_management\node_modules\mongoose\lib\document.js:3201:32)
+    at C:\Users\HP\OneDrive\Desktop\fuel_management\node_modules\mongoose\lib\document.js:2994:17
+    at C:\Users\HP\OneDrive\Desktop\fuel_management\node_modules\mongoose\lib\schemaType.js:1370:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:77:11)
+2024-2-9 16:50:59:    User validation failed: firstname: Path `firstname` is required., lastname: Path `lastname` is required.
+ValidationError: User validation failed: firstname: Path `firstname` is required., lastname: Path `lastname` is required.
+    at Document.invalidate (C:\Users\HP\OneDrive\Desktop\fuel_management\node_modules\mongoose\lib\document.js:3201:32)
+    at C:\Users\HP\OneDrive\Desktop\fuel_management\node_modules\mongoose\lib\document.js:2994:17
+    at C:\Users\HP\OneDrive\Desktop\fuel_management\node_modules\mongoose\lib\schemaType.js:1370:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:77:11)

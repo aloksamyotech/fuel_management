@@ -1,4 +1,4 @@
-import { saveUser, userLogin } from "../service/user.js";
+import { saveUser, userLogin, userUpdate } from "../service/user.js";
 
 export const addUser = async (req, res) => {
   const data = await saveUser(req.body);
