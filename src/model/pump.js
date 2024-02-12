@@ -8,6 +8,7 @@ const PumpSchema = mongoose.Schema({
   //   status: { type: String, required: true },
   fuel: { type: ObjectId, required: true },
   isActive: { type: Boolean, default: true },
+  avl_qty: { type: Number, default: 0 },
   created_at: { type: Date, required: false, default: new Date().getTime() },
   updated_at: { type: Date, required: false, default: new Date().getTime() },
 });

@@ -3,6 +3,7 @@ export const massages = {
   user_not_found: "user not found",
   wrong_credential: "incorrect password",
   internal_server_error: "internal server error",
+  fuel_not_available : "fuel not available"
 
 };
 
@@ -27,3 +28,10 @@ export const fule_type = {
   bulk: "bulk",
   retail: "retail",
 };
+
+
+export const time_para = {
+  today: "today",
+  month: "month",
+  year: "year"
+}

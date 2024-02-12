@@ -10,7 +10,7 @@ import { ordered, getOrder } from "../controller/order.js";
 import { addPump, fetchPump } from "../controller/pump.js";
 import { addDuty, fetchAllDuty } from "../controller/assign_duty.js";
 import { addSaving, fetchAllSaving } from "../controller/saving.js";
-import { fetchAllSales, addSales } from "../controller/sales.js";
+import { fetchAllSales, addSales, salesReport } from "../controller/sales.js";
 const router = express.Router();
 
 // user routes
@@ -61,8 +61,7 @@ router.get("/saving/get/all", fetchAllSaving);
 // Sales routes
 router.post("/add/sales", addSales);
 router.get("/sales/get/all", fetchAllSales);
-
-// here are hrms routes
+router.get('/sales/report/:value',salesReport)
 
 //staff routes
 

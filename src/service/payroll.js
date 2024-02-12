@@ -1,16 +1,16 @@
 import { PayRollModel } from "../model/payroll.js";
 
 export const savePayRoll = async (req, res) => {
-  const { basic_salary, staff, allowances, tds } = req?.body;
+    const { basic_salary, staff, allowances, tds } = req?.body;
 
-  const payRollDetails = new PayRollModel({
-    basic_salary,
-    staff,
-    allowances,
-    tds,
-  });
+    const payRollDetails = new PayRollModel({
+        basic_salary,
+        staff,
+        allowances,
+        tds,
+    });
 
-  return await payRollDetails.save();
+    return await payRollDetails.save();
 };
 
 export const allPayRoll = async (req, res) => {
@@ -32,3 +32,7 @@ export const allPayRoll = async (req, res) => {
     return massages.internal_server_error;
   }
 };
+
+
+
+
