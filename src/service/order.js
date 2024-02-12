@@ -1,10 +1,11 @@
 // import { massages } from "../helpers/constant.js";
 import { fule_type, massages } from "../helpers/constant.js";
 import { OrderModel } from "../model/order.js";
+import { incrimentQtyOfPump } from "./pump.js";
 
 export const addOrder = async (req, res) => {
   try {
-    let { type, liters, cost, supplier, fuel } = req?.body;
+    let { type, liters, cost, supplier, fuel, pump } = req?.body;
     type = fule_type.bulk;
 
     const newOrder = new OrderModel({
@@ -13,9 +14,11 @@ export const addOrder = async (req, res) => {
       cost,
       supplier,
       fuel,
+      pump
     });
-
-    return await newOrder.save();
+    const saveOrderDetails = await newOrder.save();
+    await incrimentQtyOfPump(pump, liters)
+    return saveOrderDetails
   } catch (error) {
     console.error(error);
     return massages.internal_server_error;

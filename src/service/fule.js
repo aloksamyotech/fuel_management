@@ -1,4 +1,4 @@
-import { massages } from "../helpers/constant.js";
+import { fule_type, massages } from "../helpers/constant.js";
 import { FuelModel } from "../model/fuels.js";
 
 export const fuelManagement = async (req, res) => {
@@ -9,3 +9,7 @@ export const fuelManagement = async (req, res) => {
     return massages.internal_server_error;
   }
 };
+
+
+
+

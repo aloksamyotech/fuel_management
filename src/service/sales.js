@@ -1,5 +1,8 @@
-import { massages } from "../helpers/constant.js";
+import { time } from "console";
+import { massages, time_para } from "../helpers/constant.js";
 import { SalesModel } from "../model/Sales.js";
+import moment from "moment/moment.js";
+import { decrimentQtyOfPump, isFuelAvailable } from "./pump.js";
 
 export const createSalesData = async (req, res) => {
   try {
@@ -13,7 +16,14 @@ export const createSalesData = async (req, res) => {
       pump,
     });
 
-    return await newSales.save();
+    const isFuesAvailable = await isFuelAvailable(pump,liter) 
+    if(isFuesAvailable){
+      const addSalesDetails =  await newSales.save();
+      await decrimentQtyOfPump(pump,liter)
+    }else{
+      return massages.fuel_not_available
+    }
+
   } catch (error) {
     console.error(error);
     return massages.internal_server_error;
@@ -57,3 +67,66 @@ export const getAllSalesData = async (req, res) => {
     return massages.internal_server_error;
   }
 };
+
+export const salesReportByDate = async (req, res) => {
+
+  
+  try {
+    let startDate, endDate;
+  
+    if (req.params.value == time_para.today) {
+      startDate = moment().startOf('day');
+      endDate = moment().endOf('day');
+    } else if (req.params.value == time_para.month) {
+      startDate = moment().startOf('month');
+      endDate = moment().endOf('month');
+    } else if (req.params.value == time_para.year) {
+      startDate = moment().startOf('year');
+      endDate = moment().endOf('year');
+    }
+  
+    const salesData = await SalesModel.aggregate([
+      { $match: { created_at: { $gte: startDate.toDate(), $lte: endDate.toDate() } } },
+      { $lookup: { from: "fuels", localField: "fuel", foreignField: "_id", as: "fuel" } },
+      { $unwind: "$fuel" },
+      { $lookup: { from: "staffs", localField: "staff", foreignField: "_id", as: "staff" } },
+      { $unwind: "$staff" },
+      { $lookup: { from: "pumps", localField: "pump", foreignField: "_id", as: "pump" } },
+      { $unwind: "$pump" },
+      { $sort: { _id: -1 } }
+    ]);
+  
+    const response = {
+      diesel: 0,
+      petrol: 0,
+      gas: 0,
+      carosene: 0,
+      total: 0
+    };
+  
+    salesData?.forEach(item => {
+      switch (item?.fuel?.fuel_type) {
+        case 'Diesel':
+          response.diesel += item.amount;
+          break;
+        case 'petrol':
+          response.petrol += item.amount;
+          break;
+        case 'gas':
+          response.gas += item.amount;
+          break;
+        case 'carosine':
+          response.carosene += item.amount;
+          break;
+        default:
+          break;
+      }
+      response.total += item.amount;
+    });
+  
+    return response;
+  } catch (error) {
+    console.log(error);
+  }
+  
+}
