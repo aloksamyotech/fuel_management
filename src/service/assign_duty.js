@@ -1,6 +1,6 @@
 import { massages } from "../helpers/constant.js";
 import { DutyModel } from "../model/assign_duty.js";
-
+import { logger } from "../../app.js";
 export const createDuty = async (req, res) => {
   try {
     const { current_reading, pump, fuel, staff } = req.body;
@@ -15,6 +15,7 @@ export const createDuty = async (req, res) => {
     return await newDuty.save();
   } catch (error) {
     console.error(error);
+    logger.error(`${error.message}\n${error.stack}`);
     return massages.internal_server_error;
   }
 };
@@ -53,6 +54,7 @@ export const getAllDuty = async (req, res) => {
     ]);
   } catch (error) {
     console.error(error);
+    logger.error(`${error.message}\n${error.stack}`);
     return massages.internal_server_error;
   }
 };

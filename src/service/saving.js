@@ -26,6 +26,7 @@ export const getAllSavingData = async (req, res) => {
     return await SavingModel.find().sort({ created_at: -1 });
   } catch (error) {
     console.error(error);
+    logger.error(`${error.message}\n${error.stack}`);
     return massages.internal_server_error;
   }
 };

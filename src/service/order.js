@@ -2,7 +2,7 @@
 import { fule_type, massages } from "../helpers/constant.js";
 import { OrderModel } from "../model/order.js";
 import { incrimentQtyOfPump } from "./pump.js";
-
+import { logger } from "../../app.js";
 export const addOrder = async (req, res) => {
   try {
     let { type, liters, cost, supplier, fuel, pump } = req?.body;
@@ -14,13 +14,14 @@ export const addOrder = async (req, res) => {
       cost,
       supplier,
       fuel,
-      pump
+      pump,
     });
     const saveOrderDetails = await newOrder.save();
-    await incrimentQtyOfPump(pump, liters)
-    return saveOrderDetails
+    await incrimentQtyOfPump(pump, liters);
+    return saveOrderDetails;
   } catch (error) {
     console.error(error);
+    logger.error(`${error.message}\n${error.stack}`);
     return massages.internal_server_error;
   }
 };
@@ -39,6 +40,15 @@ export const getAllOrder = async (req, res) => {
       { $unwind: "$supplier" },
       {
         $lookup: {
+          from: "pumps",
+          localField: "pump",
+          foreignField: "_id",
+          as: "pump",
+        },
+      },
+      { $unwind: "$pump" },
+      {
+        $lookup: {
           from: "fuels",
           localField: "fuel",
           foreignField: "_id",
@@ -50,6 +60,7 @@ export const getAllOrder = async (req, res) => {
     ]);
   } catch (error) {
     console.error(error);
+    logger.error(`${error.message}\n${error.stack}`);
     return massages.internal_server_error;
   }
 };

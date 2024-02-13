@@ -1,5 +1,6 @@
 import { massages } from "../helpers/constant.js";
 import { SupplierModel } from "../model/supplier.js";
+import { logger } from "../../app.js";
 
 export const addSupplier = async (req, res) => {
   try {
@@ -18,6 +19,7 @@ export const addSupplier = async (req, res) => {
     return await newSupplier.save();
   } catch (error) {
     console.error(error);
+    logger.error(`${error.message}\n${error.stack}`);
     return massages.internal_server_error;
   }
 };
@@ -27,6 +29,7 @@ export const getAllSupplierDetails = async (req, res) => {
     return await SupplierModel.find().sort({ created_at: -1 });
   } catch (error) {
     console.error(error);
+    logger.error(`${error.message}\n${error.stack}`);
     return massages.internal_server_error;
   }
 };

@@ -3,6 +3,7 @@ import { massages, time_para } from "../helpers/constant.js";
 import { SalesModel } from "../model/Sales.js";
 import moment from "moment/moment.js";
 import { decrimentQtyOfPump, isFuelAvailable } from "./pump.js";
+import { logger } from "../../app.js";
 
 export const createSalesData = async (req, res) => {
   try {
@@ -16,16 +17,16 @@ export const createSalesData = async (req, res) => {
       pump,
     });
 
-    const isFuesAvailable = await isFuelAvailable(pump,liter) 
-    if(isFuesAvailable){
-      const addSalesDetails =  await newSales.save();
-      await decrimentQtyOfPump(pump,liter)
-    }else{
-      return massages.fuel_not_available
+    const isFuesAvailable = await isFuelAvailable(pump, liter);
+    if (isFuesAvailable) {
+      const addSalesDetails = await newSales.save();
+      await decrimentQtyOfPump(pump, liter);
+    } else {
+      return massages.fuel_not_available;
     }
-
   } catch (error) {
     console.error(error);
+    logger.error(`${error.message}\n${error.stack}`);
     return massages.internal_server_error;
   }
 };
@@ -64,58 +65,82 @@ export const getAllSalesData = async (req, res) => {
     ]);
   } catch (error) {
     console.error(error);
+    logger.error(`${error.message}\n${error.stack}`);
     return massages.internal_server_error;
   }
 };
 
 export const salesReportByDate = async (req, res) => {
-
-  
   try {
     let startDate, endDate;
-  
+
     if (req.params.value == time_para.today) {
-      startDate = moment().startOf('day');
-      endDate = moment().endOf('day');
+      startDate = moment().startOf("day");
+      endDate = moment().endOf("day");
     } else if (req.params.value == time_para.month) {
-      startDate = moment().startOf('month');
-      endDate = moment().endOf('month');
+      startDate = moment().startOf("month");
+      endDate = moment().endOf("month");
     } else if (req.params.value == time_para.year) {
-      startDate = moment().startOf('year');
-      endDate = moment().endOf('year');
+      startDate = moment().startOf("year");
+      endDate = moment().endOf("year");
     }
-  
+
     const salesData = await SalesModel.aggregate([
-      { $match: { created_at: { $gte: startDate.toDate(), $lte: endDate.toDate() } } },
-      { $lookup: { from: "fuels", localField: "fuel", foreignField: "_id", as: "fuel" } },
+      {
+        $match: {
+          created_at: { $gte: startDate.toDate(), $lte: endDate.toDate() },
+        },
+      },
+      {
+        $lookup: {
+          from: "fuels",
+          localField: "fuel",
+          foreignField: "_id",
+          as: "fuel",
+        },
+      },
       { $unwind: "$fuel" },
-      { $lookup: { from: "staffs", localField: "staff", foreignField: "_id", as: "staff" } },
+      {
+        $lookup: {
+          from: "staffs",
+          localField: "staff",
+          foreignField: "_id",
+          as: "staff",
+        },
+      },
       { $unwind: "$staff" },
-      { $lookup: { from: "pumps", localField: "pump", foreignField: "_id", as: "pump" } },
+      {
+        $lookup: {
+          from: "pumps",
+          localField: "pump",
+          foreignField: "_id",
+          as: "pump",
+        },
+      },
       { $unwind: "$pump" },
-      { $sort: { _id: -1 } }
+      { $sort: { _id: -1 } },
     ]);
-  
+
     const response = {
       diesel: 0,
       petrol: 0,
       gas: 0,
       carosene: 0,
-      total: 0
+      total: 0,
     };
-  
-    salesData?.forEach(item => {
+
+    salesData?.forEach((item) => {
       switch (item?.fuel?.fuel_type) {
-        case 'Diesel':
+        case "Diesel":
           response.diesel += item.amount;
           break;
-        case 'petrol':
+        case "petrol":
           response.petrol += item.amount;
           break;
-        case 'gas':
+        case "gas":
           response.gas += item.amount;
           break;
-        case 'carosine':
+        case "carosine":
           response.carosene += item.amount;
           break;
         default:
@@ -123,10 +148,10 @@ export const salesReportByDate = async (req, res) => {
       }
       response.total += item.amount;
     });
-  
+
     return response;
   } catch (error) {
     console.log(error);
+    logger.error(`${error.message}\n${error.stack}`);
   }
-  
-}
+};

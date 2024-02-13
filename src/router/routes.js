@@ -17,7 +17,7 @@ const router = express.Router();
 
 router.post("/user/add", addUser);
 router.post("/user/login", login);
-router.patch("/user/login", update);
+router.patch("/user/details/upadate", update);
 
 // router.get("/user/twofactorauth", twoFActorAuthentication);
 
@@ -61,7 +61,7 @@ router.get("/saving/get/all", fetchAllSaving);
 // Sales routes
 router.post("/add/sales", addSales);
 router.get("/sales/get/all", fetchAllSales);
-router.get('/sales/report/:value',salesReport)
+router.get("/sales/report/:value", salesReport);
 
 //staff routes
 
